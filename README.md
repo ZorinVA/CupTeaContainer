@@ -38,24 +38,24 @@ public class ResolveExample : MonoBehaviour
 }
 ```
 
-### Example Instance binding
+### Instance binding
 ```csharp
 _container.Bind<ISomeInterface>().FromInstance(new SomeClass()).AsSingleton();
 ```
 
-### Example Type binding
+### Type binding
 ```csharp
 _container.Bind<ISomeInterface>().FromType<SomeClass>().AsTransient();
 _container.Bind<ISomeInterface>().FromType<SomeClass>().AsLazySingleton();
 ```
 	
-### Example Method binding
+### Method binding
 ```csharp
 _container.Bind<ISomeInterface>().FromMethod(() => new SomeClass()).AsTransient();
 _container.Bind<ISomeInterface>().FromMethod(() => new SomeClass()).AsLazySingleton();
 ```
 
-### Example MonoBehaviour binding
+### MonoBehaviour binding
 ```csharp
 _container.Bind<ISomeInterface>().FromInstance(instanceReference).AsSingleton();
 _container.Bind<ISomeInterface>().FromMethod(() => Instantiate(prefabReference)).AsTransient();
